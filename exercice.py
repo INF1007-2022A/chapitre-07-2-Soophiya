@@ -4,14 +4,44 @@
 from collections import deque
 
 
-def get_fibonacci_number(TODO):
-	pass
+def get_fibonacci_number(index):
 
-def get_fibonacci_sequence(TODO):
-	pass
+	#get fibonnaci number at index n
 
-def get_sorted_dict_by_decimals(TODO):
-	pass
+	if index ==0:
+		return 0
+	elif index ==1:
+		return 1
+	else:
+		return get_fibonacci_number(index-1) + get_fibonacci_number(index-2)
+
+
+def get_fibonacci_sequence(length):
+
+	#get the fibonacci sequence of length n	
+
+	if length ==1:
+		return [0]
+	elif length ==2:
+		return [0,1]
+	else:
+		fibonacci = [0,1]
+		for i in range(2,length):
+			fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
+		return fibonacci
+
+def get_sorted_dict_by_decimals(bouffe):
+
+	#sort a dict by the decimal part of the values 
+
+	sorted_dict1 = {}
+
+	for key, value in bouffe.items():
+		sorted_dict1[key] = round(value % 1, 2)
+		sorted_dict1 = dict(sorted(sorted_dict1.items(), key=lambda item: item[1]))
+	return sorted_dict1
+
+	#idk how to keep the same numbers in the sorted dict
 
 def fibonacci_numbers(length):
 	pass
