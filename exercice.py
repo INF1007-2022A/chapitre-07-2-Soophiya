@@ -44,10 +44,21 @@ def get_sorted_dict_by_decimals(bouffe):
 	#idk how to keep the same numbers in the sorted dict
 
 def fibonacci_numbers(length):
-	pass
 
-def build_recursive_sequence_generator(TODO):
-	pass
+	#return the 2 last numbers of the fibonacci sequence 
+
+	fibonacci = [0,1]
+
+	for i in range(2,length):	
+		fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
+		yield fibonacci[i-2], fibonacci[i-1]
+
+
+def build_recursive_sequence_generator(initial_values, function):
+
+#build recursive sequence generator 
+	
+	#idk how to do this one
 
 
 if __name__ == "__main__":
